@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:countdown_progress_indicator/countdown_progress_indicator.dart';
 import 'package:countdown_timer/providers/provider.dart';
+import 'package:countdown_timer/screens/home_screen.dart';
 import 'package:countdown_timer/utils/colors.dart';
 import 'package:countdown_timer/utils/responsive.dart';
 import 'package:flutter/material.dart';
@@ -52,9 +53,15 @@ class CounterScreen extends ConsumerWidget {
                       .padLeft(8, '0');
                 },
                 onComplete: () {
-                  audioPlayer.play(
-                    AssetSource('censor-beep-joshua-chivers-short-2-00-00.mp3'),
-                  );
+                  audioPlayer
+                      .play(
+                        AssetSource(
+                            'censor-beep-joshua-chivers-short-2-00-00.mp3'),
+                      )
+                      .then((value) => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen())));
                   ref.read(isPausedProvider.notifier).state = false;
                 },
                 autostart: true,

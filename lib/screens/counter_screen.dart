@@ -69,6 +69,7 @@ class CounterScreen extends ConsumerWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       backgroundColor: primaryColor,
+                      foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.circular(R.sw(50, context))),
@@ -96,6 +97,7 @@ class CounterScreen extends ConsumerWidget {
                   },
                   child: Text(
                     ref.watch(isPausedProvider) ? "Resume" : "Pause",
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ],

@@ -159,7 +159,8 @@ class HomeScreen extends ConsumerWidget {
             },
             child: Text(
               "Start",
-              style: TextStyle(fontSize: R.sh(22, context)),
+              style:
+                  TextStyle(fontSize: R.sh(22, context), color: Colors.white),
             ),
           ),
         ],
